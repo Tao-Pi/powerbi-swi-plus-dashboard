@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "c9d7e0fb5cb486f4234d",
+  "name": "c1b6c8fcff13c19e2233",
   "position": {
     "x": 259.16049382716051,
     "y": 66.370370370370367,
-    "z": 4000,
+    "z": 0,
     "height": 553.08641975308637,
-    "width": 723.75308641975312,
-    "tabOrder": 2000
+    "width": 723.75308641975312
   },
   "visual": {
     "visualType": "pivotTable",
@@ -34,64 +33,12 @@
                       "Hierarchy": "Datumshierarchie"
                     }
                   },
-                  "Level": "Jahr"
-                }
-              },
-              "queryRef": "Z - DateTable.Date.Variation.Datumshierarchie.Jahr",
-              "nativeQueryRef": "Date Jahr",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Z - DateTable"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Datumshierarchie"
-                    }
-                  },
                   "Level": "Monat"
                 }
               },
               "queryRef": "Z - DateTable.Date.Variation.Datumshierarchie.Monat",
               "nativeQueryRef": "Date Monat",
               "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Z - DateTable"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Datumshierarchie"
-                    }
-                  },
-                  "Level": "Tag"
-                }
-              },
-              "queryRef": "Z - DateTable.Date.Variation.Datumshierarchie.Tag",
-              "nativeQueryRef": "Date Tag",
-              "active": false
             }
           ]
         },
@@ -238,55 +185,7 @@
                     "Hierarchy": "Datumshierarchie"
                   }
                 },
-                "Level": "Jahr"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Z - DateTable"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "Date"
-                      }
-                    },
-                    "Hierarchy": "Datumshierarchie"
-                  }
-                },
                 "Level": "Monat"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Z - DateTable"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "Date"
-                      }
-                    },
-                    "Hierarchy": "Datumshierarchie"
-                  }
-                },
-                "Level": "Tag"
               }
             },
             "direction": "Ascending"
@@ -300,25 +199,6 @@
           "Rows"
         ],
         "levels": [
-          {
-            "queryRefs": [
-              "Z - DateTable.Date.Variation.Datumshierarchie.Jahr"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "LocalDateTable_b65e814b-e63c-48ae-8993-ef848fc7ed61"
-                    }
-                  },
-                  "Property": "Jahr"
-                }
-              }
-            ],
-            "isPinned": true
-          },
           {
             "queryRefs": [
               "Z - DateTable.Date.Variation.Datumshierarchie.Monat"
@@ -337,29 +217,9 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Z - DateTable.Date.Variation.Datumshierarchie.Tag"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "2025L"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -533,12 +393,6 @@
           }
         },
         {
-          "properties": {},
-          "selector": {
-            "metadata": "Z - DateTable.Date.Variation.Datumshierarchie.Jahr"
-          }
-        },
-        {
           "properties": {
             "value": {
               "expr": {
@@ -584,20 +438,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "levelSubtotalEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Z - DateTable.Date.Variation.Datumshierarchie.Jahr"
           }
         }
       ],
@@ -772,32 +612,7 @@
         "howCreated": "User"
       },
       {
-        "name": "25ca51420e7b622c9c9d",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Z - DateTable"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Datumshierarchie"
-              }
-            },
-            "Level": "Jahr"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dbe5e0795376d28e3ffc",
+        "name": "6b778914d7b8d4744e04",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -822,32 +637,7 @@
         "type": "Categorical"
       },
       {
-        "name": "af13800690c848315a53",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Z - DateTable"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Datumshierarchie"
-              }
-            },
-            "Level": "Tag"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "832b17d01947c0353225",
+        "name": "c2091fe9f2d4780cff80",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -866,7 +656,7 @@
         "type": "Advanced"
       },
       {
-        "name": "cda8d8012a65ec54b3c7",
+        "name": "651c99e320377618a562",
         "field": {
           "Measure": {
             "Expression": {
@@ -880,7 +670,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1320e223e05303f4e5a6",
+        "name": "ba6269338fcd531840e3",
         "field": {
           "Measure": {
             "Expression": {
@@ -894,7 +684,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1a0b5d881a12e31e293d",
+        "name": "342cc809e88aeb777772",
         "field": {
           "Measure": {
             "Expression": {
@@ -908,7 +698,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d3e709692394801a81de",
+        "name": "4a41381e92b831b90928",
         "field": {
           "Measure": {
             "Expression": {
@@ -922,7 +712,7 @@
         "type": "Advanced"
       },
       {
-        "name": "50ef439035d163015a3c",
+        "name": "0fdd580ca5311ece0c2e",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -941,7 +731,7 @@
         "type": "Advanced"
       },
       {
-        "name": "eaa1eae894b85a7aefa4",
+        "name": "a026682987f9e9e81071",
         "field": {
           "Measure": {
             "Expression": {
