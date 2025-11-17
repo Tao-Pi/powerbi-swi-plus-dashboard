@@ -177,9 +177,10 @@ table mapp_api_query_7241_08
 				    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
 				    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
 				    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
-				    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_08",Kind="Table"]}[Data]
+				    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_08",Kind="Table"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(mapp_api_query_7241_08_Table,{{"media_category_text_15", "media_category_text_15"}})
 				in
-				    mapp_api_query_7241_08_Table
+				    #"Columnas con nombre cambiado"
 
 	annotation PBI_ResultType = Table
 

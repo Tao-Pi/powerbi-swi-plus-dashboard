@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 553.08641975308637,
     "width": 723.75308641975312,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -770,6 +770,189 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "049d17c1a0da16b45725",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Jahr"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8e3091089509ddd7e787",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Monat"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba5ba09de0d0e24a8326",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Tag"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2a63f272ead9929bd2cb",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_merged"
+                  }
+                },
+                "Property": "session_id"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "388658bb04ae59b1d74a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Returning_Visitors"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "62c98d87355193a6c9a0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Returning_Visit_Share"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d373e4431b926ba8e753",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Visits_per_ReturningVisitor"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e255b376517385320c53",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "avg_duration_per_session_mmss"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "78e5263c120034bb3d43",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_merged"
+                  }
+                },
+                "Property": "user_id_05"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "36b65f6e96ce7900d010",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Visits (Week Total – Wed only, Avg Total)"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
