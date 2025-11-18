@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 439,
     "width": 408,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "tableEx",
@@ -351,6 +351,39 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "3e2b59ef40ec9d66ae77",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+              }
+            },
+            "Property": "event_parameter_text_4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aa8143dfac2c052e547c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+                  }
+                },
+                "Property": "events_clicks"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

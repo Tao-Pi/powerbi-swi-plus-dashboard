@@ -1003,7 +1003,7 @@ cultureInfo de-CH
 			          }
 			        },
 			        {
-			          "Word Press ID": {
+			          "Canton ID": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1013,7 +1013,7 @@ cultureInfo de-CH
 			          }
 			        },
 			        {
-			          "Canton ID": {
+			          "Word Press ID": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1106,16 +1106,6 @@ cultureInfo de-CH
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "App Version": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -75733,6 +75723,16 @@ cultureInfo de-CH
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "title": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {

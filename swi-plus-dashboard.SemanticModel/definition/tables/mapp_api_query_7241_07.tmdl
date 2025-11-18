@@ -87,7 +87,7 @@ table mapp_api_query_7241_07
 				in
 				    mapp_api_query_7241_07_Table
 
-	annotation PBI_ResultType = Exception
-
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
 
