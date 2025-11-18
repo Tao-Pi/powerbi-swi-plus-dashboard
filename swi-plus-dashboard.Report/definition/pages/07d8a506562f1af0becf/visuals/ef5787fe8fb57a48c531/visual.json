@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 53,
     "width": 145,
-    "tabOrder": 7000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -268,6 +268,25 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "572b8ae6eea0095bc045",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07"
+                  }
+                },
+                "Property": "events_clicks"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

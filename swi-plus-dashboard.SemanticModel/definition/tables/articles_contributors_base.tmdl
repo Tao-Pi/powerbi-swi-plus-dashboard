@@ -1,9 +1,9 @@
 table articles_contributors_base
-	lineageTag: 19695aa0-2e65-46a4-8a41-4caad1c9ec14
+	lineageTag: 3e5c73a4-2794-4bfd-a5d7-d40a2c9c4be5
 
 	column article_id
 		dataType: string
-		lineageTag: fc032eb5-bdf7-44b1-a0d3-9dc3f4dc8541
+		lineageTag: 339ce6b4-e9c8-4aa5-a22d-ee41b207384d
 		summarizeBy: none
 		sourceColumn: article_id
 
@@ -12,7 +12,7 @@ table articles_contributors_base
 	column pos
 		dataType: int64
 		formatString: 0
-		lineageTag: 27723730-837b-44ff-9d5e-aa12b17c000b
+		lineageTag: c014edfd-4600-4154-86c2-d0c10ab2a68c
 		summarizeBy: sum
 		sourceColumn: pos
 
@@ -20,7 +20,7 @@ table articles_contributors_base
 
 	column contrib_name
 		dataType: string
-		lineageTag: 94a8ddea-7e00-4441-af35-fec6fad55c24
+		lineageTag: 5923f6f2-f3f7-4b97-a9e8-086836768db0
 		summarizeBy: none
 		sourceColumn: contrib_name
 
@@ -28,7 +28,7 @@ table articles_contributors_base
 
 	column person_name
 		dataType: string
-		lineageTag: e465f294-e788-4372-b229-71aa53baf3af
+		lineageTag: 21594629-146b-4b74-85d3-aa1949b4f190
 		summarizeBy: none
 		sourceColumn: person_name
 
@@ -36,7 +36,7 @@ table articles_contributors_base
 
 	column team_name
 		dataType: string
-		lineageTag: 8628dcb2-9362-4d05-b522-faf198738451
+		lineageTag: d1da5b71-65f9-453e-86a8-72671600ce88
 		summarizeBy: none
 		sourceColumn: team_name
 
@@ -44,7 +44,7 @@ table articles_contributors_base
 
 	column department_name
 		dataType: string
-		lineageTag: 078e534a-b96e-415d-857c-7f9047531870
+		lineageTag: c00610a7-f7e8-4b95-9c1c-4b2a5f7d561b
 		summarizeBy: none
 		sourceColumn: department_name
 

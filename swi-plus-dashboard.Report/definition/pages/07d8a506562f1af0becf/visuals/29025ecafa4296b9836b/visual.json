@@ -7,7 +7,7 @@
     "z": 13000,
     "height": 439,
     "width": 408,
-    "tabOrder": 13000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -219,59 +219,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3a5d7793e682d0043751",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
-              }
-            },
-            "Property": "title"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
         "name": "09ff99f4cbe52fa376e5",
         "field": {
           "Column": {
@@ -324,6 +271,54 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "e50c6ec40937eac28946",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_09_clone_enriched"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "94f1e86082c3c0e0b070",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+              }
+            },
+            "Property": "event_parameter_text_4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ebdce640a7e0b107055a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+                  }
+                },
+                "Property": "events_clicks"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
