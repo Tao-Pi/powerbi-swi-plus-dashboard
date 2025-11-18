@@ -21,15 +21,3 @@ expression 'Fehler in mapping_table_Country' =
 
 	annotation PBI_ResultType = Table
 
-expression articles_contributors_base =
-		let
-		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", [Catalog = "swi_audience_prd", Database = "pdp_articles_v2_silver"]),
-		    keywords_pdp_articles_v2_silver_swi_audience_prd = Quelle{[Item="contributors_base",Schema="pdp_articles_v2_silver",Catalog="swi_audience_prd"]}[Data]
-		in
-		    keywords_pdp_articles_v2_silver_swi_audience_prd
-	lineageTag: 1669e90e-afaa-4fd2-8c58-f59e1b13f7ab
-
-	annotation PBI_NavigationStepName = Navigation
-
-	annotation PBI_ResultType = Table
-

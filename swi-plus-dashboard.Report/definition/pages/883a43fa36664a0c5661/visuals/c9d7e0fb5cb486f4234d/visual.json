@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 553.08641975308637,
     "width": 723.75308641975312,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -674,60 +674,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "eac7fbab86ae1d305d35",
+        "name": "2a63f272ead9929bd2cb",
+        "ordinal": 0,
         "field": {
-          "Column": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_merged"
+                  }
+                },
+                "Property": "session_id"
               }
             },
-            "Property": "title"
+            "Function": 2
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
+        "type": "Advanced"
+      },
+      {
+        "name": "e255b376517385320c53",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
               }
-            }
-          ]
+            },
+            "Property": "avg_duration_per_session_mmss"
+          }
         },
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "609382a065c43d4c0aea",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -743,6 +726,7 @@
       },
       {
         "name": "b351cad6b2540d211420",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -758,6 +742,7 @@
       },
       {
         "name": "efdd3ec979809cc08268",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -773,6 +758,7 @@
       },
       {
         "name": "049d17c1a0da16b45725",
+        "ordinal": 5,
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -798,6 +784,7 @@
       },
       {
         "name": "8e3091089509ddd7e787",
+        "ordinal": 6,
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -823,6 +810,7 @@
       },
       {
         "name": "ba5ba09de0d0e24a8326",
+        "ordinal": 7,
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -847,40 +835,8 @@
         "type": "Advanced"
       },
       {
-        "name": "2a63f272ead9929bd2cb",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mapp_api_query_7241_merged"
-                  }
-                },
-                "Property": "session_id"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "388658bb04ae59b1d74a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_merged"
-              }
-            },
-            "Property": "Returning_Visitors"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "62c98d87355193a6c9a0",
+        "ordinal": 8,
         "field": {
           "Measure": {
             "Expression": {
@@ -894,7 +850,8 @@
         "type": "Advanced"
       },
       {
-        "name": "d373e4431b926ba8e753",
+        "name": "388658bb04ae59b1d74a",
+        "ordinal": 9,
         "field": {
           "Measure": {
             "Expression": {
@@ -902,13 +859,14 @@
                 "Entity": "mapp_api_query_7241_merged"
               }
             },
-            "Property": "Visits_per_ReturningVisitor"
+            "Property": "Returning_Visitors"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "e255b376517385320c53",
+        "name": "36b65f6e96ce7900d010",
+        "ordinal": 10,
         "field": {
           "Measure": {
             "Expression": {
@@ -916,13 +874,14 @@
                 "Entity": "mapp_api_query_7241_merged"
               }
             },
-            "Property": "avg_duration_per_session_mmss"
+            "Property": "Visits (Week Total – Wed only, Avg Total)"
           }
         },
         "type": "Advanced"
       },
       {
         "name": "78e5263c120034bb3d43",
+        "ordinal": 11,
         "field": {
           "Aggregation": {
             "Expression": {
@@ -941,7 +900,24 @@
         "type": "Advanced"
       },
       {
-        "name": "36b65f6e96ce7900d010",
+        "name": "4302aba00306dab7c580",
+        "ordinal": 12,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_09_clone_enriched"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "d373e4431b926ba8e753",
+        "ordinal": 13,
         "field": {
           "Measure": {
             "Expression": {
@@ -949,11 +925,12 @@
                 "Entity": "mapp_api_query_7241_merged"
               }
             },
-            "Property": "Visits (Week Total – Wed only, Avg Total)"
+            "Property": "Visits_per_ReturningVisitor"
           }
         },
         "type": "Advanced"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

@@ -7,7 +7,7 @@
     "z": 0,
     "height": 184,
     "width": 836,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "lineChart",
@@ -212,5 +212,42 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "62617d2b69561265cea0"
+  "parentGroupName": "62617d2b69561265cea0",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "84090161c8c3b2305402",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Z - DateTable"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef3a57dd83d5db29b68d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_08"
+                  }
+                },
+                "Property": "media_views"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

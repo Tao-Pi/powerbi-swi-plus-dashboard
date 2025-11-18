@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 184,
     "width": 402,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "hundredPercentStackedAreaChart",
@@ -322,6 +322,39 @@
             }
           ]
         }
+      },
+      {
+        "name": "bc3e1262be226ca01acd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Z - DateTable"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "77c34ab588a96d72707a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07"
+                  }
+                },
+                "Property": "events_clicks"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

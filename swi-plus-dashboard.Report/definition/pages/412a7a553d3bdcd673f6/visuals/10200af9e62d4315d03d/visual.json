@@ -269,74 +269,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "2f7164ed06ec74711d39",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
-              }
-            },
-            "Property": "title"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "5163bcefd22350391c0b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_08"
-              }
-            },
-            "Property": "media_category_text_15"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "8f9f9ca8ba0e5250932d",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -350,26 +284,8 @@
         "type": "Categorical"
       },
       {
-        "name": "b5670d1f1c769318995c",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mapp_api_query_7241_08"
-                  }
-                },
-                "Property": "media_views"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "1dcba12c045b09088502",
+        "ordinal": 1,
         "field": {
           "Measure": {
             "Expression": {
@@ -384,6 +300,7 @@
       },
       {
         "name": "8e960e007aa49b00b91d",
+        "ordinal": 2,
         "field": {
           "Aggregation": {
             "Expression": {
@@ -400,7 +317,59 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "5163bcefd22350391c0b",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_08"
+              }
+            },
+            "Property": "media_category_text_15"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a830bf9d4a445027334b",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_09_clone_enriched"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "b5670d1f1c769318995c",
+        "ordinal": 5,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_08"
+                  }
+                },
+                "Property": "media_views"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

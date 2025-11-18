@@ -11,7 +11,7 @@ queryGroup 'Abfragefehler: 16 10 2025 14:28:44'
 
 	annotation PBI_QueryGroupOrder = 0
 
-annotation PBI_QueryOrder = ["mapp_api_query_7241_07_PowerBI_Relation","mapp_api_query_7241_08","mapp_api_query_7241_merged","mapping_table_Country","Fehler in mapping_table_Country","mapp_api_query_7241_09_clone_enriched","mapp_api_query_7241_09_clone","coretable_session_id","coretable_article_id","mapp_api_query_7241_13","articles_keywords","articles_resources_links","articles_resources_pictures","articles_title_items","articles_contributors_base","articles_joined","mapp_api_query_7241_14","mapp_api_query_7241_15","mapp_api_query_joined_7241_16_7241_13","mapp_api_query_7241_07"]
+annotation PBI_QueryOrder = ["mapp_api_query_7241_07_PowerBI_Relation","mapp_api_query_7241_08","mapp_api_query_7241_merged","mapping_table_Country","Fehler in mapping_table_Country","mapp_api_query_7241_09_clone_enriched","mapp_api_query_7241_09_clone","coretable_session_id","coretable_article_id","mapp_api_query_7241_13","articles_keywords","articles_resources_links","articles_resources_pictures","articles_title_items","articles_contributors_base","articles_joined","mapp_api_query_7241_14","mapp_api_query_7241_15","mapp_api_query_joined_7241_16_7241_13","mapp_api_query_7241_07","appstore_sales_merged","mapp_api_query_7241_02","mapp_api_query_7241_04"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -49,6 +49,12 @@ ref table mapp_api_query_7241_14
 ref table mapp_api_query_7241_15
 ref table mapp_api_query_joined_7241_16_7241_13
 ref table mapp_api_query_7241_07
+ref table appstore_sales_merged
+ref table LocalDateTable_59e86c65-c3ba-4cd0-87fb-3a04650dd3c5
+ref table LocalDateTable_96011e33-0229-44c5-b0a3-5af5cc90ed22
+ref table mapp_api_query_7241_02
+ref table mapp_api_query_7241_04
+ref table articles_contributors_base
 
 ref cultureInfo de-CH
 

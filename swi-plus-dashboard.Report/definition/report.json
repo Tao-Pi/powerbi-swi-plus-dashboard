@@ -30,7 +30,7 @@
           "Version": 2,
           "From": [
             {
-              "Name": "`",
+              "Name": "a",
               "Entity": "appstore_sales_merged",
               "Type": 0
             }
@@ -44,7 +44,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "`"
+                            "Source": "a"
                           }
                         },
                         "Property": "Apple_Identifier"
