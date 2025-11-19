@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "29025ecafa4296b9836b",
   "position": {
     "x": 690,
@@ -219,59 +219,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3a5d7793e682d0043751",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
-              }
-            },
-            "Property": "title"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
         "name": "09ff99f4cbe52fa376e5",
         "field": {
           "Column": {
@@ -324,6 +271,39 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "9c4fc6e1ca506b131013",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+              }
+            },
+            "Property": "event_parameter_text_4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e7fce3f752e400cb66cc",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+                  }
+                },
+                "Property": "events_clicks"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

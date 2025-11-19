@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "c9d7e0fb5cb486f4234d",
   "position": {
     "x": 259.16049382716051,
@@ -674,60 +674,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "eac7fbab86ae1d305d35",
+        "name": "2878ccb00b525c30d389",
+        "ordinal": 0,
         "field": {
-          "Column": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_merged"
+                  }
+                },
+                "Property": "session_id"
               }
             },
-            "Property": "title"
+            "Function": 2
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
+        "type": "Advanced"
+      },
+      {
+        "name": "bcc9f0ddd00ccdd6ae32",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
               }
-            }
-          ]
+            },
+            "Property": "avg_duration_per_session_mmss"
+          }
         },
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "609382a065c43d4c0aea",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -743,6 +726,7 @@
       },
       {
         "name": "b351cad6b2540d211420",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -758,6 +742,7 @@
       },
       {
         "name": "efdd3ec979809cc08268",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -770,7 +755,197 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "bc806a0ad6916c0606e0",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "appstore_sales_merged"
+              }
+            },
+            "Property": "Title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "7e98fb630b921a170564",
+        "ordinal": 6,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Jahr"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e725c46147687b087a3c",
+        "ordinal": 7,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Monat"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fbda013309c0a8e20801",
+        "ordinal": 8,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Z - DateTable"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Datumshierarchie"
+              }
+            },
+            "Level": "Tag"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "835e967a76e0089e2b32",
+        "ordinal": 9,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Returning_Visit_Share"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6a603b663aebd892cd7e",
+        "ordinal": 10,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Returning_Visitors"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ef3af57fc6b904cba348",
+        "ordinal": 11,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Visits (Week Total – Wed only, Avg Total)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "97af90de08a17e084007",
+        "ordinal": 12,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_merged"
+                  }
+                },
+                "Property": "user_id_05"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a4667c016c097747bbd7",
+        "ordinal": 13,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_merged"
+              }
+            },
+            "Property": "Visits_per_ReturningVisitor"
+          }
+        },
+        "type": "Advanced"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

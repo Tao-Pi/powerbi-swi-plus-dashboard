@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "567d5810050c8b53841d",
+  "position": {
+    "x": 1130,
+    "y": 29.179331306990882,
+    "z": 14001,
+    "height": 690.29604421162685,
+    "width": 150
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "appstore_sales_merged"
+                    }
+                  },
+                  "Property": "Title"
+                }
+              },
+              "queryRef": "appstore_sales_merged.Title",
+              "nativeQueryRef": "Title"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "43a2d7f2b03dbe1a4b34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "appstore_sales_merged"
+              }
+            },
+            "Property": "Title"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

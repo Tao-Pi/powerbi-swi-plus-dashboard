@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "db9a9ae577a5cebcd4dc",
+  "name": "cad45cfec35cb027051a",
   "position": {
-    "x": 0,
-    "y": 0,
-    "z": 17000,
-    "height": 84.640567731614951,
-    "width": 222.76823100036282
+    "x": 5.0098249826581105,
+    "y": 299.2875529745582,
+    "z": 2000,
+    "height": 85.354013130118986,
+    "width": 222.13303216019906,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -19,35 +20,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Z - DateTable"
+                      "Entity": "mapping_table_Country"
                     }
                   },
-                  "Property": "Date"
+                  "Property": "name"
                 }
               },
-              "queryRef": "Z - DateTable.Date",
-              "nativeQueryRef": "Date",
-              "active": true
+              "queryRef": "mapping_table_Country.name",
+              "nativeQueryRef": "Country",
+              "active": true,
+              "displayName": "Country"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Z - DateTable"
-                  }
-                },
-                "Property": "Date"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -65,14 +52,14 @@
             "endDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2025-11-13T00:00:00'"
+                  "Value": "datetime'2025-09-19T00:00:00'"
                 }
               }
             },
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Between'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -108,66 +95,6 @@
                   "Value": "1D"
                 }
               }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "z",
-                    "Entity": "Z - DateTable",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "And": {
-                        "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "z"
-                                  }
-                                },
-                                "Property": "Date"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2025-01-01T00:00:00'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 3,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "z"
-                                  }
-                                },
-                                "Property": "Date"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2025-11-14T00:00:00'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
             }
           }
         }
@@ -178,7 +105,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -224,6 +151,33 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -258,14 +212,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Time'"
+                  "Value": "'Domestic vs. Foreign'"
                 }
               }
             },
@@ -331,9 +285,14 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "name",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e0d910ac8ee788b7e47c",
+  "parentGroupName": "203c068a65e061d40c01",
   "filterConfig": {
     "filters": [
       {
@@ -349,7 +308,8 @@
             "Property": "Date"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "8d41e957c7dfbf6f4054",

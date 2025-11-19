@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "10200af9e62d4315d03d",
   "position": {
     "x": 447,
@@ -269,57 +269,84 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "2f7164ed06ec74711d39",
+        "name": "2e380f17662055bb8bb7",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
+                "Entity": "mapp_api_query_7241_08"
               }
             },
-            "Property": "title"
+            "Property": "media_category_text_15"
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "7a3ad3f75485c42d4e01",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_08"
               }
-            }
-          ]
+            },
+            "Property": "media_category_text_1"
+          }
         },
-        "howCreated": "User"
+        "type": "Categorical"
+      },
+      {
+        "name": "c04bea3fac943071b3a2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_08"
+                  }
+                },
+                "Property": "media_views"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "92e8d39206a0093d4e95",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_08"
+              }
+            },
+            "Property": "avg. Time Media (mm:ss)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "82f523b0b3463cea6393",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_08"
+                  }
+                },
+                "Property": "media_playbackTime_minutes"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

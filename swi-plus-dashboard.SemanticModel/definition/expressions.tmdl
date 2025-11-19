@@ -21,3 +21,360 @@ expression 'Fehler in mapping_table_Country' =
 
 	annotation PBI_ResultType = Table
 
+expression mapp_api_query_7241_01 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_01_Table = swiplus_Schema{[Name="mapp_api_query_7241_01",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_01_Table
+	lineageTag: f4439698-c6fa-4de1-a5a3-efac34432edb
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_03 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_03_Table = swiplus_Schema{[Name="mapp_api_query_7241_03",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_03_Table
+	lineageTag: 368b1273-4f32-4c4b-8a49-d7af6ab587e1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression mapp_api_query_7241_05 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_05_Table = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null)
+		in
+		    mapp_api_query_7241_05_Table
+	lineageTag: 4ed4b562-6f9f-4b6b-8b58-2979603dbb60
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_06 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_06_Table = swiplus_Schema{[Name="mapp_api_query_7241_06",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_06_Table
+	lineageTag: 09658175-f587-4fad-a6fb-debf2c787235
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_06_enriched =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_06_enriched_Table = swiplus_Schema{[Name="mapp_api_query_7241_06_enriched",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_06_enriched_Table
+	lineageTag: 5f55eca6-ea7e-4f7a-868f-4b940c0de0ce
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_10 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_10_Table = swiplus_Schema{[Name="mapp_api_query_7241_10",Kind="Table"]}[Data],
+		    #"Ersetzter Wert" = Table.ReplaceValue(mapp_api_query_7241_10_Table,null,"exit",Replacer.ReplaceValue,{"pages_follower1"}),
+		    #"Ersetzter Wert1" = Table.ReplaceValue(#"Ersetzter Wert",null,"exit",Replacer.ReplaceValue,{"pages_follower2"})
+		in
+		    #"Ersetzter Wert1"
+	lineageTag: 2d750f7b-f0a3-4cc1-bad2-8054b894ebde
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression mapp_api_query_7241_10_splitted =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_10_splitted_Table = swiplus_Schema{[Name="mapp_api_query_7241_10_splitted",Kind="Table"]}[Data],
+		    #"Ersetzter Wert" = Table.ReplaceValue(mapp_api_query_7241_10_splitted_Table,null,"exit",Replacer.ReplaceValue,{"pages_follower2_05"}),
+		    #"Ersetzter Wert1" = Table.ReplaceValue(#"Ersetzter Wert",null,"exit",Replacer.ReplaceValue,{"pages_follower1_05"})
+		in
+		    #"Ersetzter Wert1"
+	lineageTag: 55488672-5b1d-4277-a5e4-b6c36c541784
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_10_enriched_v2 = ```
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_10_enriched_v2_Table = swiplus_Schema{[Name="mapp_api_query_7241_10_enriched_v2",Kind="Table"]}[Data],
+		    #"Duplizierte Spalte" = Table.DuplicateColumn(mapp_api_query_7241_10_enriched_v2_Table, "pages", "local_solved_pages"),
+		    #"Duplizierte Spalte1" = Table.DuplicateColumn(#"Duplizierte Spalte", "pages_follower1", "local_solved_pages_follower1"),
+		    #"Duplizierte Spalte2" = Table.DuplicateColumn(#"Duplizierte Spalte1", "pages_follower2", "local_solved_pages_follower2"),
+		    #"Ersetzter Wert1" = let
+		    Clean = (v as any) as text =>
+		        let
+		            t0 = try Text.Trim(Text.From(v)) otherwise null,
+		            // "null" als Text ebenfalls wie null behandeln
+		            t = if t0<>null and Text.Lower(t0)="null" then null else t0,
+		
+		            // 1) Nach letztem "/"
+		            slashPos = if t=null then -1 else Text.PositionOf(t, "/", Occurrence.Last),
+		            afterSlash = if slashPos >= 0 then Text.Range(t, slashPos + 1) else t,
+		
+		            // 2) Nach letzter "swissinfo."
+		            lower = if afterSlash=null then null else Text.Lower(afterSlash),
+		            key = "swissinfo.",
+		            pos = if lower=null then -1 else Text.PositionOf(lower, key, Occurrence.Last),
+		            afterSwissinfo = if pos >= 0 then Text.Range(afterSlash, pos + Text.Length(key)) else afterSlash,
+		
+		            // 3) Zahlen-/GUID-Suffix entfernen
+		            lastDotPos = if afterSwissinfo=null then -1 else Text.PositionOf(afterSwissinfo, ".", Occurrence.Last),
+		            suffix = if lastDotPos = -1 then null else Text.Range(afterSwissinfo, lastDotPos + 1),
+		            isAllDigits = if suffix=null then false else Text.Length(Text.Remove(suffix, {"0".."9"})) = 0,
+		            isHexHyphen = if suffix=null then false else Text.Contains(suffix, "-") 
+		                          and Text.Length(Text.Remove(suffix, {"0".."9","a".."f","A".."F","-"})) = 0,
+		            stripId = if (lastDotPos >= 0) and (isAllDigits or isHexHyphen)
+		                        then Text.Range(afterSwissinfo, 0, lastDotPos)
+		                        else afterSwissinfo,
+		
+		            // 4) Doppelte Tokens "today.today"
+		            parts = if stripId=null then {} else Text.Split(stripId, "."),
+		            dedup = if List.Count(parts)=2 and Text.Lower(parts{0}) = Text.Lower(parts{1})
+		                        then parts{0} else stripId,
+		
+		            // 5) Trimmen; 6) null/leer -> "exit"
+		            interim = if dedup=null then null else Text.TrimEnd(dedup, {".", " "}),
+		            result = if interim=null or Text.Length(Text.Trim(interim))=0 then "exit" else interim
+		        in
+		            result
+		in
+		    Table.TransformColumns(
+		        #"Duplizierte Spalte2",
+		        {
+		            {"local_solved_pages", each Clean(_), type text},
+		            {"local_solved_pages_follower1", each Clean(_), type text},
+		            {"local_solved_pages_follower2", each Clean(_), type text}
+		        },
+		        null,
+		        MissingField.Ignore
+		    ),
+		    #"Ersetzter Wert" = Table.ReplaceValue(
+		    #"Ersetzter Wert1",           // oder: <Name deines vorherigen Schritts mit der Bereinigung>
+		    null,
+		    "exit",
+		    Replacer.ReplaceValue,
+		    {"local_solved_pages","local_solved_pages_follower1","local_solved_pages_follower2"}
+		)
+		in
+		    #"Ersetzter Wert"
+		```
+	lineageTag: 19a78b1f-b690-424a-87de-f44cf3910ad1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_11 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_11_Table = swiplus_Schema{[Name="mapp_api_query_7241_11",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_11_Table
+	lineageTag: bca45d9d-4c3c-4fe8-ab58-ad332f0f47a9
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression mapp_api_query_7241_11_enriched =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_11_enriched_Table = swiplus_Schema{[Name="mapp_api_query_7241_11_enriched",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_11_enriched_Table
+	lineageTag: 55db0bd1-a700-4fb9-b183-00c2cc54c8e3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression playstore_installs_app_version_cleaned =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    playstore_installs_app_version_cleaned_Table = swiplus_Schema{[Name="playstore_installs_app_version_cleaned",Kind="Table"]}[Data]
+		in
+		    playstore_installs_app_version_cleaned_Table
+	lineageTag: d2ca3747-bf52-450c-8076-58e3f4e9658c
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression playstore_installs_carrier_cleaned =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    playstore_installs_carrier_cleaned_Table = swiplus_Schema{[Name="playstore_installs_carrier_cleaned",Kind="Table"]}[Data]
+		in
+		    playstore_installs_carrier_cleaned_Table
+	lineageTag: a19a4681-36f8-4815-9b1b-2a558cf9dd9d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression playstore_installs_country_cleaned =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    playstore_installs_country_cleaned_Table = swiplus_Schema{[Name="playstore_installs_country_cleaned",Kind="Table"]}[Data]
+		in
+		    playstore_installs_country_cleaned_Table
+	lineageTag: 01a90aa2-211f-4b32-bdce-ffbccf2e22ed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression playstore_installs_language_cleaned =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    playstore_installs_language_cleaned_Table = swiplus_Schema{[Name="playstore_installs_language_cleaned",Kind="Table"]}[Data]
+		in
+		    playstore_installs_language_cleaned_Table
+	lineageTag: d957e08f-6a8e-4958-89ca-b2ecd7a4e0dd
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression playstore_installs_os_version_cleaned =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    playstore_installs_os_version_cleaned_Table = swiplus_Schema{[Name="playstore_installs_os_version_cleaned",Kind="Table"]}[Data]
+		in
+		    playstore_installs_os_version_cleaned_Table
+	lineageTag: 4acf76a4-7686-4231-a534-20a6ea15bbca
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression mapp_api_query_7241_10_clone =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_10_clone",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_08_Table
+	lineageTag: 18b6fc1e-3eb5-46a3-9c8d-669f2e251665
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_10_clone_enriched =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_10_clone_enriched",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_08_Table
+	lineageTag: 319dadc2-94b3-478e-8369-64c9bc8b5673
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_11_clone_enriched =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_11_clone_enriched",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_08_Table
+	lineageTag: e5cc105f-cc81-4240-aaf2-133ad061613f
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_11_clone =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_11_clone",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_08_Table
+	lineageTag: 94a1634d-d63b-4185-b8d0-04b76d8291e8
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression mapp_api_query_7241_09 =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_09_Table = swiplus_Schema{[Name="mapp_api_query_7241_09",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_09_Table
+	lineageTag: 505a9f36-c14c-41f6-b5e9-b4ec947bff12
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression mapp_api_query_7241_09_enriched =
+		let
+		    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
+		    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
+		    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
+		    mapp_api_query_7241_09_enriched_Table = swiplus_Schema{[Name="mapp_api_query_7241_09_enriched",Kind="Table"]}[Data]
+		in
+		    mapp_api_query_7241_09_enriched_Table
+	lineageTag: 641af2ee-b18d-4e5b-a4b0-90ef791d9249
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

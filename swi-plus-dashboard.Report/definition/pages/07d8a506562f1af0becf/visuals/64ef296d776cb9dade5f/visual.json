@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "64ef296d776cb9dade5f",
   "position": {
     "x": 259,
@@ -246,60 +246,28 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0a3d9fe0bbcb34c930d3",
+        "name": "87e0c786cb40a7a7a099",
+        "ordinal": 0,
         "field": {
-          "Column": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+                  }
+                },
+                "Property": "events_clicks"
               }
             },
-            "Property": "title"
+            "Function": 0
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "09ff99f4cbe52fa376e5",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -351,7 +319,54 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "90e33cf890ed5de4b090",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+              }
+            },
+            "Property": "event_parameter_text_4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "577d5ca7b628c193e000",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "appstore_sales_merged"
+              }
+            },
+            "Property": "Title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }
