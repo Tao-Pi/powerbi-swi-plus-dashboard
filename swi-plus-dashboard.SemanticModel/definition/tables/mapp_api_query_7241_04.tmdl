@@ -1,10 +1,9 @@
 table mapp_api_query_7241_04
-	lineageTag: 6efaea20-b965-482f-bb7e-146b56f4000a
+	lineageTag: 3d95a2f7-a3a1-4b76-a946-b16fa88deb4b
 
 	column session_id
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: a2201b2b-310a-4150-a0d2-4c7350140634
+		lineageTag: 1b91d5d1-d3dc-44cf-b8fb-4258508ddf4e
 		summarizeBy: none
 		sourceColumn: session_id
 
@@ -12,8 +11,7 @@ table mapp_api_query_7241_04
 
 	column location_city
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: d91928e0-fce6-4da3-8371-04742bcaebe1
+		lineageTag: 7fe2e54a-b62e-439d-b94c-78220b927e42
 		summarizeBy: none
 		sourceColumn: location_city
 
@@ -21,8 +19,7 @@ table mapp_api_query_7241_04
 
 	column location_region
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: b620263c-b5df-42cb-86eb-6480b18d201c
+		lineageTag: ca9f7485-9731-4589-8f12-e6b2f856b29e
 		summarizeBy: none
 		sourceColumn: location_region
 
@@ -30,8 +27,7 @@ table mapp_api_query_7241_04
 
 	column location_country
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 63950bd9-910f-4c31-bb5a-5728294c0f65
+		lineageTag: f1b97c1c-1d7c-490a-9165-1db161ea8ac3
 		summarizeBy: none
 		sourceColumn: location_country
 
@@ -40,8 +36,7 @@ table mapp_api_query_7241_04
 	column pages_pageImpressions
 		dataType: int64
 		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: e5c86928-d6a3-4cbf-9e86-e20834985f55
+		lineageTag: a151b786-64ff-4a8d-b4fd-743e1b887223
 		summarizeBy: sum
 		sourceColumn: pages_pageImpressions
 
@@ -54,11 +49,11 @@ table mapp_api_query_7241_04
 				    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
 				    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
 				    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
-				    mapp_api_query_7241_04_Table = swiplus_Schema{[Name="mapp_api_query_7241_04",Kind="Table"]}[Data]
+				    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_04",Kind="Table"]}[Data]
 				in
-				    mapp_api_query_7241_04_Table
-
-	annotation PBI_ResultType = Table
+				    mapp_api_query_7241_08_Table
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

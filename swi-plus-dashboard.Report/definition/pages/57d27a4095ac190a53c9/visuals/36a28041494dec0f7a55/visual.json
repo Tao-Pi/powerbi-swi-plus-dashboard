@@ -7,7 +7,11 @@
     "z": 9000,
     "height": 308,
     "width": 194,
+<<<<<<< HEAD
     "tabOrder": 8000
+=======
+    "tabOrder": 7000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "tableEx",

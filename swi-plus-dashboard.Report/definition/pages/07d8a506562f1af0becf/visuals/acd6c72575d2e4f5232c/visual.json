@@ -7,7 +7,11 @@
     "z": 5000,
     "height": 184,
     "width": 402,
+<<<<<<< HEAD
     "tabOrder": 4000
+=======
+    "tabOrder": 3000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "hundredPercentStackedAreaChart",
@@ -73,6 +77,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Z - DateTable"
+                  }
+                },
+                "Property": "Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -324,7 +346,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "name": "0a6bb390b2b090a0b12b",
+=======
+        "name": "7f64c980d9c6841c359a",
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         "field": {
           "Column": {
             "Expression": {
@@ -338,7 +364,11 @@
         "type": "Categorical"
       },
       {
+<<<<<<< HEAD
         "name": "4107a4a42ba87e5316c6",
+=======
+        "name": "5ecb28d4d5ccc08bdc88",
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         "field": {
           "Aggregation": {
             "Expression": {

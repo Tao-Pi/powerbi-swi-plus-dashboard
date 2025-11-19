@@ -7,7 +7,11 @@
     "z": 7000,
     "height": 482.85714285714289,
     "width": 227.14285714285717,
+<<<<<<< HEAD
     "tabOrder": 2000
+=======
+    "tabOrder": 1000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visualGroup": {
     "displayName": "Gruppe 2",

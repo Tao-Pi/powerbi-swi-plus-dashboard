@@ -7,7 +7,11 @@
     "z": 10000,
     "height": 53,
     "width": 145,
+<<<<<<< HEAD
     "tabOrder": 9000
+=======
+    "tabOrder": 8000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "card",

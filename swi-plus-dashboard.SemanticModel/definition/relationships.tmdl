@@ -18,6 +18,10 @@ relationship AutoDetected_3f298b42-70ca-48ce-a5e7-7cc1b22fd4d3
 	toColumn: coretable_session_id.session_id
 
 relationship AutoDetected_dc06e4b3-3080-496f-bb62-cd4055bb2b63
+<<<<<<< HEAD
+=======
+	crossFilteringBehavior: bothDirections
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
 	fromColumn: mapp_api_query_7241_07_PowerBI_Relation.session_id
 	toColumn: coretable_session_id.session_id
 
@@ -129,6 +133,7 @@ relationship AutoDetected_6a983c2b-8b4e-46f8-85fe-5dbcdf63404e
 	fromColumn: mapp_api_query_joined_7241_16_7241_13.session_id
 	toColumn: coretable_session_id.session_id
 
+<<<<<<< HEAD
 relationship 9fd2ad37-e5be-4a58-a6ad-2a5bd728cdc0
 	joinOnDateBehavior: datePartOnly
 	fromColumn: appstore_sales_merged.End_Date_Timestamp
@@ -219,10 +224,28 @@ relationship AutoDetected_6e9a5ad4-68b8-49bc-9b0b-14c8c30d0c6e
 	toColumn: coretable_session_id.session_id
 
 relationship AutoDetected_53514b5f-3686-4497-8327-bfa99ca72882
+=======
+relationship AutoDetected_8a50bb0d-018d-44f0-857c-8ba5e1bcc21a
+	fromColumn: mapp_api_query_7241_07.session_id
+	toColumn: coretable_session_id.session_id
+
+relationship c15ef61a-53a9-4f0e-ba0c-55e591f64aeb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: appstore_sales_merged.Begin_Date_Timestamp
+	toColumn: LocalDateTable_59e86c65-c3ba-4cd0-87fb-3a04650dd3c5.Date
+
+relationship a4a7ecce-db5b-4852-ab85-9f30d7c1323e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: appstore_sales_merged.End_Date_Timestamp
+	toColumn: LocalDateTable_96011e33-0229-44c5-b0a3-5af5cc90ed22.Date
+
+relationship AutoDetected_c79a6acb-7a16-4836-9006-490ed5446ba8
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
 	crossFilteringBehavior: bothDirections
 	fromColumn: mapp_api_query_7241_02.session_id
 	toColumn: coretable_session_id.session_id
 
+<<<<<<< HEAD
 relationship AutoDetected_efa4804b-3473-4f50-bed1-983801e533df
 	crossFilteringBehavior: bothDirections
 	fromColumn: mapp_api_query_7241_01.session_id
@@ -299,3 +322,22 @@ relationship AutoDetected_31b8208b-778e-484f-b264-2ca03025ed71
 	fromColumn: mapp_api_query_10_clone_joining_13.session_id
 	toColumn: coretable_session_id.session_id
 
+=======
+relationship 32da4a48-8036-2431-358d-38c6c3da6afd
+	crossFilteringBehavior: bothDirections
+	fromColumn: mapp_api_query_7241_02.time_days
+	toColumn: 'Z - DateTable'.Date
+
+relationship AutoDetected_88ec2ff4-0ab0-4f8a-a5c1-4f5062b36df8
+	fromColumn: mapp_api_query_7241_04.session_id
+	toColumn: coretable_session_id.session_id
+
+relationship d7757021-a525-ff6d-9924-afc592f92d7b
+	fromColumn: mapp_api_query_7241_04.location_country
+	toColumn: mapping_table_Country.WebtrekkCountry
+
+relationship 67e26843-8595-66d2-17c3-5061dd895724
+	fromColumn: articles_contributors_base.article_id
+	toColumn: coretable_article_id.article_id
+
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936

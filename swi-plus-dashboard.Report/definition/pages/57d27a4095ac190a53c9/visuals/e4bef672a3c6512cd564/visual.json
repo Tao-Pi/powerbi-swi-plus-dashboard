@@ -7,7 +7,11 @@
     "z": 3000,
     "height": 85.354013130118986,
     "width": 222.13303216019906,
+<<<<<<< HEAD
     "tabOrder": 3000
+=======
+    "tabOrder": 2000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "slicer",

@@ -6,7 +6,12 @@
     "y": 491.70486855801539,
     "z": 5000,
     "height": 85.714285714285722,
+<<<<<<< HEAD
     "width": 221.42857142857144
+=======
+    "width": 221.42857142857144,
+    "tabOrder": 2000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "slicer",
@@ -59,6 +64,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

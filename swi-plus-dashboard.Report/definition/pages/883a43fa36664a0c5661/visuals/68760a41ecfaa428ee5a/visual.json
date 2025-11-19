@@ -7,7 +7,11 @@
     "z": 0,
     "height": 36.746411483253588,
     "width": 750.23923444976083,
+<<<<<<< HEAD
     "tabOrder": 7000
+=======
+    "tabOrder": 6000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "pageNavigator",

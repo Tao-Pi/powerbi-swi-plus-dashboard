@@ -7,7 +7,11 @@
     "z": 8000,
     "height": 439,
     "width": 408,
+<<<<<<< HEAD
     "tabOrder": 7000
+=======
+    "tabOrder": 6000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "tableEx",
@@ -57,21 +61,16 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
-                      }
-                    },
-                    "Property": "events_clicks"
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
                   }
                 },
-                "Function": 0
+                "Property": "event_parameter_text_4"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -246,60 +245,28 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0a3d9fe0bbcb34c930d3",
+        "name": "25f42d3b705b585669ae",
+        "ordinal": 0,
         "field": {
-          "Column": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "mapp_api_query_7241_09_enriched"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mapp_api_query_7241_07_PowerBI_Relation"
+                  }
+                },
+                "Property": "events_clicks"
               }
             },
-            "Property": "title"
+            "Function": 0
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mapp_api_query_7241_09_enriched",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "m"
-                            }
-                          },
-                          "Property": "title"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "09ff99f4cbe52fa376e5",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -353,7 +320,28 @@
         "howCreated": "User"
       },
       {
+<<<<<<< HEAD
         "name": "3e2b59ef40ec9d66ae77",
+=======
+        "name": "a0edcdd0860918803e06",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mapp_api_query_7241_09_clone_enriched"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "dde34e36ac8373a4a5a9",
+        "ordinal": 3,
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         "field": {
           "Column": {
             "Expression": {
@@ -365,6 +353,7 @@
           }
         },
         "type": "Categorical"
+<<<<<<< HEAD
       },
       {
         "name": "aa8143dfac2c052e547c",
@@ -384,7 +373,10 @@
           }
         },
         "type": "Advanced"
+=======
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

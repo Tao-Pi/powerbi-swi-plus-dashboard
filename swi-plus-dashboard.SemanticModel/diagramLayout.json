@@ -4,14 +4,18 @@
     {
       "ordinal": 0,
       "scrollPosition": {
+<<<<<<< HEAD
         "x": 543.08592083318047,
+=======
+        "x": 3866.6413134967806,
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 6613.16868302575,
-            "y": 2036.4744784351624
+            "x": 6179.0831219201764,
+            "y": 1683.7799600368837
           },
           "nodeIndex": "mapp_api_query_7241_merged",
           "nodeLineageTag": "8086d321-420a-46c4-bcd8-2fbe553a0429",
@@ -19,6 +23,7 @@
             "height": 300,
             "width": 442.91299551188968
           },
+<<<<<<< HEAD
           "zIndex": 36
         },
         {
@@ -64,13 +69,22 @@
           "location": {
             "x": 1521.7920832934494,
             "y": 1846.6755652583515
+=======
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 4903.1910909701528,
+            "y": 0
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
           },
           "nodeIndex": "mapp_api_query_7241_08",
           "nodeLineageTag": "46c82ecc-4db6-4201-ba1e-ba2d6f0c0deb",
           "size": {
-            "height": 662.34319716555137,
+            "height": 276.15420027286018,
             "width": 231.11222296945061
           },
+<<<<<<< HEAD
           "zIndex": 40
         },
         {
@@ -220,6 +234,14 @@
           "location": {
             "x": 6436.6737123320991,
             "y": 1514.5668251018651
+=======
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 6194.182946841358,
+            "y": 980.18902707593338
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
           },
           "nodeIndex": "Z - DateTable",
           "nodeLineageTag": "99be61f7-b418-4602-af3b-0627fa89e15f",
@@ -227,6 +249,7 @@
             "height": 200,
             "width": 234
           },
+<<<<<<< HEAD
           "zIndex": 39
         },
         {
@@ -363,6 +386,14 @@
           "location": {
             "x": 5504.6015129593716,
             "y": 2056.1946003362682
+=======
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 5774.0356968379938,
+            "y": 107.28733694757062
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
           },
           "nodeIndex": "mapp_api_query_7241_07_PowerBI_Relation",
           "nodeLineageTag": "92734f7c-e68b-423c-89a0-c7387f6a8d88",
@@ -370,10 +401,11 @@
             "height": 248,
             "width": 422.194351328892
           },
-          "zIndex": 10
+          "zIndex": 22
         },
         {
           "location": {
+<<<<<<< HEAD
             "x": 7.9370872554163725,
             "y": 0
           },
@@ -402,14 +434,18 @@
           "location": {
             "x": 961.449406725308,
             "y": 1420.8925894668557
+=======
+            "x": 6862.0580336671246,
+            "y": 114.13679765554002
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
           },
           "nodeIndex": "mapping_table_Country",
           "nodeLineageTag": "e9d10954-7ac3-4f24-b376-0a1a28eb15fc",
           "size": {
-            "height": 300,
-            "width": 234
+            "height": 531.6531307953835,
+            "width": 397.67149881738351
           },
-          "zIndex": 12
+          "zIndex": 13
         },
         {
           "location": {
@@ -422,12 +458,12 @@
             "height": 300,
             "width": 228.8203389542507
           },
-          "zIndex": 9
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 2688.1221726071335,
-            "y": 2049.6432956531221
+            "x": 5409.4074297812131,
+            "y": 239.94369393504599
           },
           "nodeIndex": "mapp_api_query_7241_09_clone_enriched",
           "nodeLineageTag": "28b37d13-6e4f-478a-a091-f3e24a1f9213",
@@ -435,6 +471,7 @@
             "height": 358.51840231392271,
             "width": 239.43431180285916
           },
+<<<<<<< HEAD
           "zIndex": 35
         },
         {
@@ -493,6 +530,14 @@
           "location": {
             "x": 3081.8058333721488,
             "y": 0
+=======
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 4393.0521949147751,
+            "y": 642.15147157738193
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
           },
           "nodeIndex": "coretable_session_id",
           "nodeLineageTag": "1c8a1f90-b91f-422a-a5c8-77941c359e44",
@@ -500,7 +545,11 @@
             "height": 104,
             "width": 234
           },
+<<<<<<< HEAD
           "zIndex": 47
+=======
+          "zIndex": 8
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         },
         {
           "location": {
@@ -513,12 +562,16 @@
             "height": 472.01542468997519,
             "width": 354.92868058485419
           },
+<<<<<<< HEAD
           "zIndex": 45
+=======
+          "zIndex": 17
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         },
         {
           "location": {
-            "x": 9043.2897105148841,
-            "y": 401.56004179796855
+            "x": 9333.0858564832834,
+            "y": 383.34100789690734
           },
           "nodeIndex": "coretable_article_id",
           "nodeLineageTag": "8b2a9021-225b-4f63-ba54-280a153e814e",
@@ -526,6 +579,7 @@
             "height": 339.64874773273891,
             "width": 547.22510708863774
           },
+<<<<<<< HEAD
           "zIndex": 43
         },
         {
@@ -540,6 +594,9 @@
             "width": 234
           },
           "zIndex": 4
+=======
+          "zIndex": 16
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         },
         {
           "location": {
@@ -552,11 +609,11 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 15
         },
         {
           "location": {
-            "x": 8893.0954150067864,
+            "x": 9050.2133827967173,
             "y": 0
           },
           "nodeIndex": "articles_resources_links",
@@ -565,7 +622,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 11
         },
         {
           "location": {
@@ -578,7 +635,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 14
         },
         {
           "location": {
@@ -591,7 +648,7 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 10
         },
         {
           "location": {
@@ -604,7 +661,7 @@
             "height": 504.61715888672148,
             "width": 347.12168133574778
           },
-          "zIndex": 2
+          "zIndex": 12
         },
         {
           "location": {
@@ -617,12 +674,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 10680.383744403987,
-            "y": 1608.3809540721263
+            "x": 5924.8703989463147,
+            "y": 1181.7768295976423
           },
           "nodeIndex": "mapp_api_query_7241_15",
           "nodeLineageTag": "3a4b7b79-6abb-400f-bcba-da9d13a82aaa",
@@ -630,24 +687,16 @@
             "height": 128,
             "width": 234
           },
+<<<<<<< HEAD
           "zIndex": 44
+=======
+          "zIndex": 9
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
         },
         {
           "location": {
-            "x": 10396.383744403987,
-            "y": 1522.3809540721263
-          },
-          "nodeIndex": "mapp_api_query_10_clone_joining_13",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 10964.383744403987,
-            "y": 1572.3809540721263
+            "x": 6622.0028142268657,
+            "y": 750.60669324232981
           },
           "nodeIndex": "mapp_api_query_joined_7241_16_7241_13",
           "nodeLineageTag": "ca38c208-b4a0-47ea-b9b8-80b037ad98e9",
@@ -655,11 +704,84 @@
             "height": 200,
             "width": 234
           },
+<<<<<<< HEAD
           "zIndex": 46
         }
       ],
       "name": "Alle Tabellen",
       "zoomValue": 54.232417127881781,
+=======
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 5087.5950897015427,
+            "y": 1269.7170428825727
+          },
+          "nodeIndex": "mapp_api_query_7241_07",
+          "nodeLineageTag": "c4fe1985-cafe-4611-871e-b097bf84b99a",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 6855.4633188669341,
+            "y": 1683.9845876734719
+          },
+          "nodeIndex": "appstore_sales_merged",
+          "nodeLineageTag": "71179aa7-ac0d-4f2a-8f4b-63945db0468f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 5053.1972116207808,
+            "y": 986.41811286029656
+          },
+          "nodeIndex": "mapp_api_query_7241_02",
+          "nodeLineageTag": "b3052067-4ca8-4142-b201-558e7f674359",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 6347.0223483611844,
+            "y": 264.2167973537214
+          },
+          "nodeIndex": "mapp_api_query_7241_04",
+          "nodeLineageTag": "3d95a2f7-a3a1-4b76-a946-b16fa88deb4b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 8930.6261597727516,
+            "y": 262.040638816361
+          },
+          "nodeIndex": "articles_contributors_base",
+          "nodeLineageTag": "3e5c73a4-2794-4bfd-a5d7-d40a2c9c4be5",
+          "size": {
+            "height": 195.58049194872615,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "Alle Tabellen",
+      "zoomValue": 19.862199199063088,
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

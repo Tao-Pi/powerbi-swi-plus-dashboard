@@ -1,21 +1,9 @@
 table mapp_api_query_7241_07
-	lineageTag: a0a0e331-bb79-46f9-b46d-b2fb4557211b
-
-	measure 'SessionFeatureNutzungsrate (%)' =
-			
-			VAR TotalSessions =
-			    CALCULATE(DISTINCTCOUNT('mapp_api_query_7241_merged'[session_id]))
-			VAR SessionsMitEvent =
-			    CALCULATE(DISTINCTCOUNT('mapp_api_query_7241_07'[session_id]))
-			RETURN
-			DIVIDE(SessionsMitEvent, TotalSessions, 0)
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 9110d56c-3223-427b-8166-8f495b7ff962
+	lineageTag: c4fe1985-cafe-4611-871e-b097bf84b99a
 
 	column session_id
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 955dc000-945d-4ee3-9b90-f3560e48291a
+		lineageTag: 9622b563-a0f3-4bb7-94e7-8c25c10a4108
 		summarizeBy: none
 		sourceColumn: session_id
 
@@ -23,8 +11,7 @@ table mapp_api_query_7241_07
 
 	column events
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c3629733-14c0-4a89-8665-b9adc63c6007
+		lineageTag: 93aa04d5-f678-4514-b3de-1ec4eda3a30e
 		summarizeBy: none
 		sourceColumn: events
 
@@ -32,8 +19,7 @@ table mapp_api_query_7241_07
 
 	column event_parameter_text_1
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 37879aff-ccbd-4168-b27b-26705a73ff6a
+		lineageTag: 377a3b3f-cfb6-4b17-862c-0589c7aacc95
 		summarizeBy: none
 		sourceColumn: event_parameter_text_1
 
@@ -41,8 +27,7 @@ table mapp_api_query_7241_07
 
 	column event_parameter_text_2
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e0359123-6900-4c52-991a-18b6b7f42f9d
+		lineageTag: e7639e81-524c-42d7-8032-42af55eb2b61
 		summarizeBy: none
 		sourceColumn: event_parameter_text_2
 
@@ -50,8 +35,7 @@ table mapp_api_query_7241_07
 
 	column event_parameter_text_3
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c643c8ec-0e3d-4809-b465-aa3aff021e75
+		lineageTag: 213b5be8-7abd-482b-81cb-49dff6dd8045
 		summarizeBy: none
 		sourceColumn: event_parameter_text_3
 
@@ -59,8 +43,7 @@ table mapp_api_query_7241_07
 
 	column event_parameter_text_4
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 7477fe38-f4bb-492e-806f-894f0bd7d5a7
+		lineageTag: 582c0192-acc2-46c2-aa77-53a25d39c09d
 		summarizeBy: none
 		sourceColumn: event_parameter_text_4
 
@@ -69,8 +52,7 @@ table mapp_api_query_7241_07
 	column events_clicks
 		dataType: int64
 		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: 7a7f2ea7-5b46-4cba-a926-e585f452ae95
+		lineageTag: 5b4ae65a-0b08-4d8a-b5aa-22eeb8f1093e
 		summarizeBy: sum
 		sourceColumn: events_clicks
 
@@ -83,11 +65,19 @@ table mapp_api_query_7241_07
 				    Quelle = Databricks.Catalogs("adb-4119964566130471.11.azuredatabricks.net", "/sql/1.0/warehouses/59a74cf19690258c", null),
 				    swi_audience_prd_Database = Quelle{[Name="swi_audience_prd",Kind="Database"]}[Data],
 				    swiplus_Schema = swi_audience_prd_Database{[Name="swiplus",Kind="Schema"]}[Data],
-				    mapp_api_query_7241_07_Table = swiplus_Schema{[Name="mapp_api_query_7241_07",Kind="Table"]}[Data]
+				    mapp_api_query_7241_08_Table = swiplus_Schema{[Name="mapp_api_query_7241_07",Kind="Table"]}[Data]
 				in
+<<<<<<< HEAD
 				    mapp_api_query_7241_07_Table
 
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Exception
+=======
+				    mapp_api_query_7241_08_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
 

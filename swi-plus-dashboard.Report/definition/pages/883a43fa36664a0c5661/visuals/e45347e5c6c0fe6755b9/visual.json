@@ -7,7 +7,11 @@
     "z": 6000,
     "height": 408.75720164609055,
     "width": 297.08641975308643,
+<<<<<<< HEAD
     "tabOrder": 5000
+=======
+    "tabOrder": 4000
+>>>>>>> 2549b0c16e7d53871693ac5ffe25295a4e019936
   },
   "visual": {
     "visualType": "textbox",
