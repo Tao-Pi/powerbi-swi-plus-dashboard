@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "powerbi-swi-plus-dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "904f36dc-df80-4b30-9e03-0168fdc1eb55"
+  }
+}
