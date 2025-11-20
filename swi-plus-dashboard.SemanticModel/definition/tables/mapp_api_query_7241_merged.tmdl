@@ -304,6 +304,7 @@ table mapp_api_query_7241_merged
 			    IF(
 			        HASONEVALUE('Z - DateTable'[Month]),
 			        FORMAT(CurrentValue, "0") & " " & Icon & " " & FORMAT(Change, "0.00%"),
+			        // Icon & " " & FORMAT(Change, "0.00%"),
 			        BLANK()
 			    )
 			```
@@ -633,6 +634,490 @@ table mapp_api_query_7241_merged
 	measure sessions = DISTINCTCOUNT('mapp_api_query_7241_merged'[session_id])
 		formatString: 0
 		lineageTag: 37e082c8-9cb0-45bf-a131-4df080d422d8
+
+	measure selected_value_MoM = ```
+			
+			VAR SelectedMeasure =
+			    SELECTEDVALUE('Metric'[Parámetro Campos])
+			
+			VAR CurrentValue =
+			    SWITCH(
+			        SelectedMeasure,
+			        "Selected Value", SelectedMeasure,
+			        // Add more measures here if needed
+			        BLANK()
+			    )
+			
+			VAR PrevValue =
+			    SWITCH(
+			        SelectedMeasure,
+			        "Selected Value", 
+			            CALCULATE(SelectedMeasure, DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        // Add more measures here if needed
+			        BLANK()
+			    )
+			
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			
+			VAR Icon =
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, "🟢 ↑",
+			        Change < 0, "🔴 ↓",
+			        "➖"
+			    )
+			
+			RETURN
+			    IF(
+			        HASONEVALUE('Z - DateTable'[Month]),
+			        FORMAT(CurrentValue, "0") & " " & Icon & " " & FORMAT(Change, "0.00%"),
+			        // Icon & " " & FORMAT(Change, "0.00%"),
+			        BLANK()
+			    )
+			```
+		lineageTag: 2b69d20b-a65e-415c-9396-2392f6f0bf6c
+
+	measure MoM_Change_Only = ```
+			
+			VAR CurrentValue =
+			    SWITCH(
+			        TRUE(),
+			        ISSELECTEDMEASURE([avg_duration_per_session_mmss]), [avg_duration_per_session_mmss],
+			        ISSELECTEDMEASURE([Returning_Visit_Share]), [Returning_Visit_Share],
+			        ISSELECTEDMEASURE([Returning_Visitors]), [Returning_Visitors],
+			        ISSELECTEDMEASURE([sessions]), [sessions],
+			        ISSELECTEDMEASURE([Visits (Week Total – Wed only, Avg Total)]), [Visits (Week Total – Wed only, Avg Total)],
+			        ISSELECTEDMEASURE([visitors]), [visitors],
+			        ISSELECTEDMEASURE([Visits_per_ReturningVisitor]), [Visits_per_ReturningVisitor],
+			        BLANK()
+			    )
+			
+			VAR PrevValue =
+			    SWITCH(
+			        TRUE(),
+			        ISSELECTEDMEASURE([avg_duration_per_session_mmss]), CALCULATE([avg_duration_per_session_mmss], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([Returning_Visit_Share]), CALCULATE([Returning_Visit_Share], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([Returning_Visitors]), CALCULATE([Returning_Visitors], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([sessions]), CALCULATE([sessions], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([Visits (Week Total – Wed only, Avg Total)]), CALCULATE([Visits (Week Total – Wed only, Avg Total)], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([visitors]), CALCULATE([visitors], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        ISSELECTEDMEASURE([Visits_per_ReturningVisitor]), CALCULATE([Visits_per_ReturningVisitor], DATEADD('Z - DateTable'[Date], -1, MONTH)),
+			        BLANK()
+			    )
+			
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			
+			VAR Icon =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(Change), "➖",
+			        Change > 0, "🟢 ↑",
+			        Change < 0, "🔴 ↓",
+			        "➖"
+			    )
+			
+			RETURN
+			    IF(
+			        HASONEVALUE('Z - DateTable'[Month]),
+			        // Icon & " " & FORMAT(Change, "0.00%"),
+			        CurrentValue,
+			        BLANK()
+			    )
+			
+			```
+		lineageTag: f8e5a950-3790-4469-aa32-7c292a1af6a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EsMayorQueCero = ```
+			
+			VAR ValorSeleccionado = SELECTEDVALUE('Metric'[Parámetro Orden])
+			RETURN
+			IF(ValorSeleccionado > 10, TRUE(), FALSE())
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8c319551-d5de-49bd-896f-fd5969a7c671
+
+	measure Sessions_Combined_Metrics_Tabbed = ```
+			
+			VAR CurrentValue = [sessions]
+			VAR PrevValue = CALCULATE([sessions], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon =
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, "🟢 ↑",
+			        Change < 0, "🔴 ↓",
+			        "➖"
+			    )
+			
+			-- Valor de sesiones en marzo 2025
+			VAR LaunchMonthValue =
+			    CALCULATE(
+			        [sessions],
+			        FILTER(
+			            ALL('Z - DateTable'),
+			            MONTH('Z - DateTable'[Date]) = 3 &&
+			            YEAR('Z - DateTable'[Date]) = 2025
+			        )
+			    )
+			
+			-- Cambio respecto a marzo 2025
+			VAR LTDChange =
+			    FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			    IF(
+			        HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			        IF(
+			            YEAR(MAX('Z - DateTable'[Date])) > 2025 || 
+			            (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			            REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			            ""
+			        ),
+			        BLANK()
+			    )
+			```
+		lineageTag: 2026e1ab-22e2-4357-986f-8df633bb47c9
+
+	measure VisitsPerReturningVisitor_Combined_Metrics_Tabbed =
+			
+			VAR CurrentValue = [Visits_per_ReturningVisitor]
+			VAR PrevValue = CALCULATE([Visits_per_ReturningVisitor], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Visits_per_ReturningVisitor], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 7d3b2da1-aa26-4522-8f34-af6433544b9c
+
+	measure Visitors_Combined_Metrics_Tabbed =
+			
+			VAR CurrentValue = [visitors]
+			VAR PrevValue = CALCULATE([visitors], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([visitors], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 5de87822-262b-47b4-8b5d-f62155d9e6bc
+
+	measure VisitsWeekTotalAvg_Combined_Metrics_Tabbed = ```
+			
+			VAR CurrentValue = [Visits (Week Total – Wed only, Avg Total)]
+			VAR PrevValue = CALCULATE([Visits (Week Total – Wed only, Avg Total)], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Visits (Week Total – Wed only, Avg Total)], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 5ef348c4-d330-4590-bc22-5771d6f9279a
+
+	measure ReturningVisitors_Combined_Metrics_Tabbed =
+			
+			VAR CurrentValue = [Returning_Visitors]
+			VAR PrevValue = CALCULATE([Returning_Visitors], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Returning_Visitors], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 090656ba-7536-4458-8f62-5a41c9720d9a
+
+	measure ReturningVisitShare_Combined_Metrics_Tabbed = ```
+			
+			VAR CurrentValue = [Returning_Visit_Share]
+			VAR PrevValue = CALCULATE([Returning_Visit_Share], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Returning_Visit_Share], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00%") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 49d69fd1-d724-471e-bf3e-d9d7dffbbcfe
+
+	measure AvgDurationPerSession_Combined_Metrics_Tabbed =
+			
+			VAR CurrentValue = [avg_duration_per_session_mmss]
+			VAR PrevValue = CALCULATE([avg_duration_per_session_mmss], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([avg_duration_per_session_mmss], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 2773edb8-42f6-4d05-a864-8ad8d6b2b67f
+
+	measure AvgDurationPerSession_Combined_Metrics_Tabbed2 =
+			
+			VAR CurrentValue = [avg_duration_per_session_mmss]
+			VAR PrevValue = CALCULATE([avg_duration_per_session_mmss], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([avg_duration_per_session_mmss], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 99a4b696-5db3-44a5-b975-aa85c144f12f
+
+	measure ReturningVisitShare_Combined_Metrics_Tabbed2 = ```
+			
+			VAR CurrentValue = [Returning_Visit_Share]
+			VAR PrevValue = CALCULATE([Returning_Visit_Share], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Returning_Visit_Share], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00%") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 2149154e-01f8-41bc-b291-261191974b8c
+
+	measure ReturningVisitors_Combined_Metrics_Tabbed2 =
+			
+			VAR CurrentValue = [Returning_Visitors]
+			VAR PrevValue = CALCULATE([Returning_Visitors], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Returning_Visitors], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & " " & Icon & REPT(" ", 10) & "MoM Gwth: " & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 013c8005-a8e1-4c65-b989-0758b66d8146
+
+	measure Sessions_Combined_Metrics_Tabbed2 = ```
+			
+			VAR CurrentValue = [sessions]
+			VAR PrevValue = CALCULATE([sessions], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon =
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, "🟢 ↑",
+			        Change < 0, "🔴 ↓",
+			        "➖"
+			    )
+			
+			-- Valor de sesiones en marzo 2025
+			VAR LaunchMonthValue =
+			    CALCULATE(
+			        [sessions],
+			        FILTER(
+			            ALL('Z - DateTable'),
+			            MONTH('Z - DateTable'[Date]) = 3 &&
+			            YEAR('Z - DateTable'[Date]) = 2025
+			        )
+			    )
+			
+			-- Cambio respecto a marzo 2025
+			VAR LTDChange =
+			    FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			    IF(
+			        HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			        IF(
+			            YEAR(MAX('Z - DateTable'[Date])) > 2025 || 
+			            (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			            REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			            ""
+			        ),
+			        BLANK()
+			    )
+			```
+		lineageTag: d3d1ba58-4b3a-4ac8-92d1-7bfcc4d47ac9
+
+	measure Visitors_Combined_Metrics_Tabbed2 =
+			
+			VAR CurrentValue = [visitors]
+			VAR PrevValue = CALCULATE([visitors], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([visitors], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 6622790f-badc-4951-bea5-51fd3a7281b2
+
+	measure VisitsPerReturningVisitor_Combined_Metrics_Tabbed2 =
+			
+			VAR CurrentValue = [Visits_per_ReturningVisitor]
+			VAR PrevValue = CALCULATE([Visits_per_ReturningVisitor], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Visits_per_ReturningVisitor], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: 2bd194f8-e4e6-4445-be65-fb86ae7f713a
+
+	measure VisitsWeekTotalAvg_Combined_Metrics_Tabbed2 =
+			
+			VAR CurrentValue = [Visits (Week Total – Wed only, Avg Total)]
+			VAR PrevValue = CALCULATE([Visits (Week Total – Wed only, Avg Total)], DATEADD('Z - DateTable'[Date], -1, MONTH))
+			VAR Change = DIVIDE(CurrentValue - PrevValue, PrevValue)
+			VAR Icon = SWITCH(TRUE(), Change > 0, "🟢 ↑", Change < 0, "🔴 ↓", "➖")
+			
+			VAR LaunchMonthValue =
+			    CALCULATE([Visits (Week Total – Wed only, Avg Total)], FILTER(ALL('Z - DateTable'), MONTH('Z - DateTable'[Date]) = 3 && YEAR('Z - DateTable'[Date]) = 2025))
+			
+			VAR LTDChange = FORMAT(DIVIDE(CurrentValue - LaunchMonthValue, LaunchMonthValue), "0.00%")
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Z - DateTable'[Month]),
+			    FORMAT(CurrentValue, "0.00") & REPT(" ", 10) & "MoM Gwth: " & Icon & FORMAT(Change, "0.00%") &
+			    IF(YEAR(MAX('Z - DateTable'[Date])) > 2025 || (YEAR(MAX('Z - DateTable'[Date])) = 2025 && MONTH(MAX('Z - DateTable'[Date])) >= 3),
+			        REPT(" ", 10) & "Gwth since Launch: " & LTDChange,
+			        ""
+			    ),
+			    BLANK()
+			)
+		lineageTag: f2fcead7-1553-4972-a883-ae0171e06b91
 
 	column session_id
 		dataType: string

@@ -1,0 +1,55 @@
+table Metric2
+	lineageTag: ef740bd0-fdeb-4782-95ab-a7bce23aece2
+
+	column Metric2
+		lineageTag: 62f59940-b27d-433c-89b9-23ef786c8c62
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Metric2 Orden'
+
+		relatedColumnDetails
+			groupByColumn: 'Metric2 Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric2 Campos'
+		isHidden
+		lineageTag: befeec06-2c93-45ff-97f8-2f1e661f8255
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Metric2 Orden'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric2 Orden'
+		isHidden
+		formatString: 0
+		lineageTag: d24f845f-9eaf-44aa-a1be-c448d59d7cc9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metric2 = calculated
+		mode: import
+		source = ```
+				{
+				    ("Average Session Duration", NAMEOF('mapp_api_query_7241_merged'[AvgDurationPerSession_Combined_Metrics_Tabbed2]), 0),
+				    ("Returning Visitors", NAMEOF('mapp_api_query_7241_merged'[ReturningVisitors_Combined_Metrics_Tabbed2]), 1),
+				    ("Returning Visit Share", NAMEOF('mapp_api_query_7241_merged'[ReturningVisitShare_Combined_Metrics_Tabbed2]), 2),
+				    ("App reach visits", NAMEOF('mapp_api_query_7241_merged'[Sessions_Combined_Metrics_Tabbed2]), 3),
+				    ("Visitors", NAMEOF('mapp_api_query_7241_merged'[Visitors_Combined_Metrics_Tabbed2]), 4),
+				    ("Visits per Returning Visitor", NAMEOF('mapp_api_query_7241_merged'[VisitsPerReturningVisitor_Combined_Metrics_Tabbed2]), 5),
+				    ("SRG Total Visits / Week", NAMEOF('mapp_api_query_7241_merged'[VisitsWeekTotalAvg_Combined_Metrics_Tabbed2]), 6)
+				}
+				
+				```
+
+	annotation PBI_Id = 81e72bacd45548c090dfd8ca0a5c64de
+

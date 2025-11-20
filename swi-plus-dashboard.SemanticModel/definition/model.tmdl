@@ -56,6 +56,8 @@ ref table mapp_api_query_10_clone_joining_13
 ref table mapp_api_query_7241_14
 ref table mapp_api_query_7241_15
 ref table mapp_api_query_joined_7241_16_7241_13
+ref table Metric
+ref table Metric2
 
 ref cultureInfo de-CH
 

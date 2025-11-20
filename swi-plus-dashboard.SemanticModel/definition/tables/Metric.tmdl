@@ -1,0 +1,53 @@
+table Metric
+	lineageTag: 337e3d11-d4f8-450a-b27e-ee2aba8730a2
+
+	column Parámetro
+		lineageTag: f2123a89-f6d5-49c7-a9da-e1465383725e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parámetro Orden'
+
+		relatedColumnDetails
+			groupByColumn: 'Parámetro Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parámetro Campos'
+		isHidden
+		lineageTag: 6d4fadfc-f729-4685-a110-1e8ea6c8614e
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parámetro Orden'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parámetro Orden'
+		isHidden
+		formatString: 0
+		lineageTag: dc8d2573-249f-447d-9c26-0be033759b9b
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metric = calculated
+		mode: import
+		source =
+				{
+				    ("Average Session Duration", NAMEOF([AvgDurationPerSession_Combined_Metrics_Tabbed]), 0),
+				    ("Returning Visit Share", NAMEOF([ReturningVisitShare_Combined_Metrics_Tabbed]), 1),
+				    ("Returning Visitors", NAMEOF([ReturningVisitors_Combined_Metrics_Tabbed]), 2),
+				    ("App reach visits", NAMEOF([Sessions_Combined_Metrics_Tabbed]), 3),
+				    ("SRG Total Visits / Week", NAMEOF([VisitsWeekTotalAvg_Combined_Metrics_Tabbed]), 4),
+				    ("Visitors", NAMEOF([Visitors_Combined_Metrics_Tabbed]), 5),
+				    ("Visits per Returning Visitor", NAMEOF([VisitsPerReturningVisitor_Combined_Metrics_Tabbed]), 6)
+				}
+
+	annotation PBI_Id = f1d981f3841e485eb9a87b56b9d46a68
+
